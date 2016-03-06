@@ -8,19 +8,15 @@
 			<h1><a href="">Как я готовилась к IELTS</a></h1>
 		</div>
 		
-		<div>
-			<h2>Reading</h2>
-			<p>published: 06.03.2016, 16:15</p>
-			<p>Useful tips on reading:</p>
-				<h3><em>True or false?</em></h3>
-				<h3><em>Headings for paragraphs</em></h3>
-		</div>
 		
-		<div>
-			<h2><a href="">Listening</a></h2>
-			<p>The <strong>easiest</strong> part of the examination.</p>
-		</div>
-		
+		{% for post in posts %}
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h2><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaks }}</p>
+			</div>
+		{% endfor %}
+			
 	</body>
 	
 </html>
